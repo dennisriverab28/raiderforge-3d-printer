@@ -1,0 +1,3 @@
+../Core/Src/timebase.c:6:6:TIMEBASE_Init	1
+../Core/Src/timebase.c:11:10:millis	1
+../Core/Src/timebase.c:16:6:TIMEBASE_OnTickISR	1

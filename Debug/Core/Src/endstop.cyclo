@@ -1,0 +1,7 @@
+../Core/Src/endstop.c:10:6:Endstop_Init	1
+../Core/Src/endstop.c:37:9:Endstop_GetRaw	1
+../Core/Src/endstop.c:42:9:Endstop_IsTriggeredImmediate	2
+../Core/Src/endstop.c:55:6:Endstop_Update	9
+../Core/Src/endstop.c:113:9:Endstop_IsTriggered	1
+../Core/Src/endstop.c:118:9:Endstop_JustTriggered	1
+../Core/Src/endstop.c:123:9:Endstop_JustReleased	1

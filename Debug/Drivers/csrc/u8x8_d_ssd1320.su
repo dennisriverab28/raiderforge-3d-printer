@@ -1,0 +1,8 @@
+../Drivers/csrc/u8x8_d_ssd1320.c:79:17:u8x8_ssd1320_8to32	32	static
+../Drivers/csrc/u8x8_d_ssd1320.c:108:9:u8x8_d_ssd1320_common	48	static
+../Drivers/csrc/u8x8_d_ssd1320.c:185:17:u8x8_ssd1320_8to32_2	32	static
+../Drivers/csrc/u8x8_d_ssd1320.c:214:9:u8x8_d_ssd1320_common_2	48	static
+../Drivers/csrc/u8x8_d_ssd1320.c:370:9:u8x8_d_ssd1320_160x32	32	static
+../Drivers/csrc/u8x8_d_ssd1320.c:574:9:u8x8_d_ssd1320_160x132	32	static
+../Drivers/csrc/u8x8_d_ssd1320.c:690:9:u8x8_d_ssd1320_160x80	32	static
+../Drivers/csrc/u8x8_d_ssd1320.c:856:9:u8x8_d_ssd1320_128x72	32	static

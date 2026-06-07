@@ -1,0 +1,14 @@
+../Core/Src/fan.c:11:13:part_fan_set_ready_sem	8	static
+../Core/Src/fan.c:17:13:part_fan_clear_ready_sem	8	static
+../Core/Src/fan.c:24:13:part_fan_set_state	16	static
+../Core/Src/fan.c:36:13:PartFan_GetState	16	static
+../Core/Src/fan.c:48:13:part_fan_apply_command	24	static
+../Core/Src/fan.c:70:6:PartFan_ModuleInit	8	static
+../Core/Src/fan.c:77:6:PartFan_Task	16	static
+../Core/Src/fan.c:121:6:Fan_Init	24	static
+../Core/Src/fan.c:155:6:Fan_On	16	static
+../Core/Src/fan.c:177:6:Fan_Off	16	static
+../Core/Src/fan.c:199:6:Fan_SetSpeed	24	static
+../Core/Src/fan.c:231:9:Fan_GetSpeed	16	static
+../Core/Src/fan.c:237:9:Fan_IsRunning	16	static
+../Core/Src/fan.c:243:12:Fan_GetMode	16	static

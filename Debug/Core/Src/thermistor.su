@@ -1,0 +1,13 @@
+../Core/Src/thermistor.c:38:13:switch_to_hotend_channel	40	static
+../Core/Src/thermistor.c:55:6:Thermistor_Init	24	static
+../Core/Src/thermistor.c:69:6:Thermistor_RegisterHeaterPWM	16	static
+../Core/Src/thermistor.c:77:10:Thermistor_ReadADC	96	static
+../Core/Src/thermistor.c:157:10:Thermistor_ReadADC_Single	24	static
+../Core/Src/thermistor.c:191:7:Thermistor_ADCToTemp	40	static
+../Core/Src/thermistor.c:236:7:Thermistor_ADCToResistance	24	static
+../Core/Src/thermistor.c:245:7:Thermistor_ReadTemp	32	static
+../Core/Src/thermistor.c:251:7:Thermistor_GetRawTemp	32	static
+../Core/Src/thermistor.c:272:10:Thermistor_GetLastADC	8	static
+../Core/Src/thermistor.c:277:9:Thermistor_IsFault	24	static
+../Core/Src/thermistor.c:291:21:Thermistor_GetLastStatus	8	static
+../Core/Src/thermistor.c:296:13:Thermistor_GetStatusText	16	static

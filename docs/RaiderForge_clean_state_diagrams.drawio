@@ -1,0 +1,245 @@
+<mxfile host="app.diagrams.net" modified="2026-04-28T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram name="1 Overall Task Flow" id="overall_task_flow">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="o1" value="System Startup&#xa;hardware init" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="55" y="70" width="190" height="75" as="geometry"/></mxCell>
+        <mxCell id="o2" value="RTOS Resources&#xa;queues + semaphores" style="shape=cylinder3d;boundedLbl=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="300" y="70" width="200" height="75" as="geometry"/></mxCell>
+        <mxCell id="o3" value="FreeRTOS Scheduler&#xa;runs module tasks" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="560" y="70" width="220" height="75" as="geometry"/></mxCell>
+        <mxCell id="o4" value="Display Task&#xa;telemetry + menu" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1045" y="70" width="220" height="75" as="geometry"/></mxCell>
+        <mxCell id="o5" value="Command Sources&#xa;SD card or screen menu" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="55" y="290" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="o6" value="Parser Task&#xa;routes G-code" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="315" y="290" width="190" height="80" as="geometry"/></mxCell>
+        <mxCell id="q1" value="xHotendQueue" style="shape=cylinder3d;boundedLbl=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="585" y="215" width="150" height="60" as="geometry"/></mxCell>
+        <mxCell id="q2" value="xBedQueue" style="shape=cylinder3d;boundedLbl=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="775" y="215" width="150" height="60" as="geometry"/></mxCell>
+        <mxCell id="q3" value="xFanQueue" style="shape=cylinder3d;boundedLbl=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="965" y="215" width="150" height="60" as="geometry"/></mxCell>
+        <mxCell id="q4" value="xMotionQueue" style="shape=cylinder3d;boundedLbl=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1155" y="215" width="150" height="60" as="geometry"/></mxCell>
+        <mxCell id="t1" value="Hotend Task&#xa;nozzle PID + fan" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="585" y="330" width="150" height="75" as="geometry"/></mxCell>
+        <mxCell id="t2" value="Bed Task&#xa;bed PID" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="775" y="330" width="150" height="75" as="geometry"/></mxCell>
+        <mxCell id="t3" value="Fan Task&#xa;part cooling" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="965" y="330" width="150" height="75" as="geometry"/></mxCell>
+        <mxCell id="t4" value="Motion Task&#xa;XYZ + E motor" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1155" y="330" width="150" height="75" as="geometry"/></mxCell>
+        <mxCell id="h1" value="Nozzle heater&#xa;thermistor + hotend fan" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=14;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="585" y="480" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="h2" value="Bed heater&#xa;bed thermistor" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=14;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="775" y="480" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="h3" value="Part cooling&#xa;PWM fan" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=14;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="965" y="480" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="h4" value="Steppers&#xa;A/B, Z, E" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=14;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1155" y="480" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="oe1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="o1" target="o2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe2" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="o2" target="o3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe3" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="o5" target="o6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe4" value="M104/M109" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=13;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="o6" target="q1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe5" value="M140/M190" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=13;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="o6" target="q2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe6" value="M106/M107" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=13;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="o6" target="q3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe7" value="G0/G1/G28" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=13;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="o6" target="q4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe8" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="q1" target="t1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe9" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="q2" target="t2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe10" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="q3" target="t3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe11" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="q4" target="t4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe12" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="t1" target="h1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe13" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="t2" target="h2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe14" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="t3" target="h3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe15" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="t4" target="h4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe16" value="status" style="endArrow=block;endFill=1;html=1;dashed=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t1" target="o4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="oe17" value="status" style="endArrow=block;endFill=1;html=1;dashed=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t2" target="o4"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="2 Nozzle Heater" id="nozzle_heater">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="Initialize&#xa;Nozzle Heater" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="70" y="280" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="n2" value="Nozzle&#xa;Idle" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="300" y="280" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="n3" value="Preheat&#xa;Nozzle" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="540" y="130" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="n4" value="Hold Nozzle&#xa;Temp" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="780" y="280" width="155" height="85" as="geometry"/></mxCell>
+        <mxCell id="n5" value="Cool Nozzle&#xa;Heater" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="540" y="440" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="n6" value="Nozzle&#xa;Fault" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;fontStyle=1" vertex="1" parent="1"><mxGeometry x="1010" y="280" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="n7" value="Fan behavior: hotend fan ON at 50 C, OFF below 45 C only when heater is disabled." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="330" y="565" width="540" height="55" as="geometry"/></mxCell>
+        <mxCell id="ne1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="n1" target="n2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ne2" value="M104/M109 or menu target" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n2" target="n3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ne3" value="at target" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n3" target="n4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ne4" value="print done / cancel / target off" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n4" target="n5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ne5" value="cooled" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n5" target="n2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ne6" value="thermal error" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n3" target="n6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ne7" value="thermal error" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="n4" target="n6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="3 Bed Heater" id="bed_heater">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="b1" value="Initialize&#xa;Bed Heater" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="70" y="280" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="b2" value="Bed Heater&#xa;Idle" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="300" y="280" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="b3" value="Preheat&#xa;Bed" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="540" y="130" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="b4" value="Hold Bed&#xa;Temp" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="780" y="280" width="155" height="85" as="geometry"/></mxCell>
+        <mxCell id="b5" value="Cool Bed&#xa;Heater" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="540" y="440" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="b6" value="Bed&#xa;Fault" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;fontStyle=1" vertex="1" parent="1"><mxGeometry x="1010" y="280" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="b7" value="Bed uses the same Heater_Update PID engine as the nozzle, but with bed thermistor and bed PID gains." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="300" y="565" width="600" height="55" as="geometry"/></mxCell>
+        <mxCell id="be1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="b1" target="b2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="be2" value="M140/M190 or menu target" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="b2" target="b3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="be3" value="at target / steady" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="b3" target="b4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="be4" value="print done / cancel / target off" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="b4" target="b5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="be5" value="cooled" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="b5" target="b2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="be6" value="thermal error" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="b3" target="b6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="be7" value="thermal error" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="b4" target="b6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="4 Heater PID Loop" id="heater_pid_loop">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p1" value="Read&#xa;Thermistor" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="70" y="280" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="p2" value="Filter&#xa;Temperature" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="300" y="280" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="p3" value="Fault&#xa;Check" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="530" y="255" width="150" height="130" as="geometry"/></mxCell>
+        <mxCell id="p4" value="PID Math&#xa;P + I + D" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="750" y="280" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="p5" value="Set PWM&#xa;0 to 100%" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="990" y="280" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="p6" value="Heater Fault&#xa;PWM forced off" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;fontStyle=1" vertex="1" parent="1"><mxGeometry x="750" y="470" width="180" height="80" as="geometry"/></mxCell>
+        <mxCell id="p7" value="This is the shared loop used by both nozzle and bed tasks every 100 ms." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="330" y="95" width="540" height="55" as="geometry"/></mxCell>
+        <mxCell id="pe1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="p1" target="p2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="pe2" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="p2" target="p3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="pe3" value="OK" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="p3" target="p4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="pe4" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="p4" target="p5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="pe5" value="error" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="p3" target="p6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="5 Fans" id="fans">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="f1" value="Part Fan&#xa;Idle" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="120" y="230" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="f2" value="Set Fan&#xa;Speed" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="390" y="230" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="f3" value="Hold Fan&#xa;Speed" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="660" y="120" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="f4" value="Fan Off" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="660" y="340" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="f5" value="Hotend Fan&#xa;Auto ON/OFF" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="910" y="230" width="190" height="85" as="geometry"/></mxCell>
+        <mxCell id="f6" value="Part fan is print cooling and follows M106/M107. Hotend fan is safety cooling and follows nozzle temperature." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="275" y="525" width="650" height="55" as="geometry"/></mxCell>
+        <mxCell id="fe1" value="M106/M107" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="f1" target="f2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe2" value="target &gt; 0" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="f2" target="f3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe3" value="target = 0" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="f2" target="f4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe4" value="new command" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="f3" target="f2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe5" value="ready" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="f4" target="f1"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="6 Motion And Motors" id="motion_motors">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="m1" value="Motion Command&#xa;G0/G1 from queue" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="60" y="290" width="185" height="80" as="geometry"/></mxCell>
+        <mxCell id="m2" value="Resolve Targets&#xa;absolute or relative X/Y/Z/E" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="315" y="290" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="m3" value="Plan Motor Steps" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="600" y="270" width="160" height="120" as="geometry"/></mxCell>
+        <mxCell id="m4" value="CoreXY A/B Motors&#xa;A steps = X + Y&#xa;B steps = X - Y" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="830" y="95" width="210" height="95" as="geometry"/></mxCell>
+        <mxCell id="m5" value="Z Motor&#xa;Z distance to steps" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="830" y="285" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="m6" value="Extruder E Motor&#xa;E distance, flow, direction" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="830" y="465" width="210" height="85" as="geometry"/></mxCell>
+        <mxCell id="m7" value="Stepper Setup&#xa;enable motor + set DIR pin" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1110" y="190" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="m8" value="Timer Pulses&#xa;TIM3 A/B, TIM15 Z, TIM17 E" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1110" y="330" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="m9" value="ISR Counts Steps&#xa;stop when count reaches zero" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#333333;strokeWidth=2;fontSize=16;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1110" y="470" width="210" height="80" as="geometry"/></mxCell>
+        <mxCell id="m10" value="Motion Done&#xa;update stored position" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="315" y="500" width="175" height="85" as="geometry"/></mxCell>
+        <mxCell id="m11" value="Motion Fault&#xa;timeout or emergency stop" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;fontStyle=1" vertex="1" parent="1"><mxGeometry x="590" y="500" width="185" height="85" as="geometry"/></mxCell>
+        <mxCell id="m12" value="Homing is separate: G28 jogs motors until debounced endstops trigger, then returns to idle." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="70" y="95" width="520" height="55" as="geometry"/></mxCell>
+        <mxCell id="me1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="m1" target="m2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me2" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="m2" target="m3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me3" value="X/Y move" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m3" target="m4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me4" value="Z move" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m3" target="m5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me5" value="E move" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m3" target="m6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me6" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="m4" target="m7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me7" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="m5" target="m7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me8" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="m6" target="m7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me9" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="m7" target="m8"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me10" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="m8" target="m9"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me11" value="all motors done" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m9" target="m10"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="me12" value="timeout" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m3" target="m11"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="7 Thermistor" id="thermistor">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="t1" value="Select ADC&#xa;Channel" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="70" y="290" width="170" height="80" as="geometry"/></mxCell>
+        <mxCell id="t2" value="Sample ADC&#xa;16 reads" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="320" y="290" width="170" height="80" as="geometry"/></mxCell>
+        <mxCell id="t3" value="Filter ADC&#xa;trim + EMA" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="570" y="290" width="170" height="80" as="geometry"/></mxCell>
+        <mxCell id="t4" value="Convert To&#xa;Temperature" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="820" y="290" width="170" height="80" as="geometry"/></mxCell>
+        <mxCell id="t5" value="Sensor&#xa;Fault" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;fontStyle=1" vertex="1" parent="1"><mxGeometry x="820" y="470" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="t6" value="Hotend thermistor uses ADC1 IN9. Bed thermistor uses ADC1 IN11. Mutex protects shared ADC access." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="260" y="120" width="680" height="55" as="geometry"/></mxCell>
+        <mxCell id="te1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="t1" target="t2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="te2" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="t2" target="t3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="te3" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="t3" target="t4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="te4" value="open / short / invalid" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t4" target="t5"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="8 Homing And Endstops" id="homing_endstops">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="h1" value="Homing&#xa;Idle" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="80" y="280" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="h2" value="Fast&#xa;Approach" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="330" y="160" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="h3" value="Backoff" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="570" y="160" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="h4" value="Slow&#xa;Approach" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="810" y="160" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="h5" value="Homing&#xa;Complete" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="810" y="390" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="h6" value="Homing&#xa;Failed" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;fontStyle=1" vertex="1" parent="1"><mxGeometry x="570" y="390" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="h7" value="Endstops are debounced for 10 ms before the triggered state is accepted." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="290" y="550" width="620" height="55" as="geometry"/></mxCell>
+        <mxCell id="he1" value="G28" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h1" target="h2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="he2" value="endstop hit" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h2" target="h3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="he3" value="backed off" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h3" target="h4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="he4" value="endstop hit again" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h4" target="h5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="he5" value="timeout" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h2" target="h6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="he6" value="next axis or idle" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h5" target="h1"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="9 SD Card And Parser" id="sd_parser">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="s1" value="Mount SD&#xa;Card" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="80" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="s2" value="Open G-code&#xa;File" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="320" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="s3" value="Read Line" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="560" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="s4" value="Parser&#xa;Routes Command" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="800" y="285" width="160" height="85" as="geometry"/></mxCell>
+        <mxCell id="s5" value="Module&#xa;Queue" style="shape=cylinder3d;boundedLbl=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1030" y="290" width="130" height="75" as="geometry"/></mxCell>
+        <mxCell id="s6" value="Examples: G0/G1 to Motion, M104/M109 to Nozzle, M140/M190 to Bed, M106/M107 to Fan." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="245" y="500" width="710" height="55" as="geometry"/></mxCell>
+        <mxCell id="se1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="s1" target="s2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="se2" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="s2" target="s3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="se3" value="xGCodeQueue" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s3" target="s4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="se4" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="s4" target="s5"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="10 Display Menu" id="display_menu">
+    <mxGraphModel dx="1200" dy="700" grid="0" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="675" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="d1" value="Initialize&#xa;Screen" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="70" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="d2" value="Boot&#xa;Screen" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="300" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="d3" value="Telemetry" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="540" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="d4" value="Menu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="780" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="d5" value="Selected&#xa;Action" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=17;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="1010" y="285" width="150" height="85" as="geometry"/></mxCell>
+        <mxCell id="d6" value="Menu actions stay high level: preheat, home, start print, cancel print, pause print, return." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontSize=15;fontFamily=Arial;" vertex="1" parent="1"><mxGeometry x="280" y="500" width="640" height="55" as="geometry"/></mxCell>
+        <mxCell id="de1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;" edge="1" parent="1" source="d1" target="d2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de2" value="boot done" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d2" target="d3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de3" value="button press" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d3" target="d4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de4" value="select" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d4" target="d5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de5" value="back" style="endArrow=block;endFill=1;html=1;strokeColor=#333333;strokeWidth=2;fontSize=14;fontFamily=Arial;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="d5" target="d3"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
