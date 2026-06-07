@@ -1,0 +1,2 @@
+../Core/Src/app_freertos.c:66:13:IntegrationTestTask	1
+../Core/Src/app_freertos.c:80:6:StartIntegrationTestTask	1

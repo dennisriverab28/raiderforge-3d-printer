@@ -1,0 +1,14 @@
+../FATFS/Target/user_diskio.c:72:12:sd_wait_ready	24	static
+../FATFS/Target/user_diskio.c:85:6:USER_disk_reset	8	static
+../FATFS/Target/user_diskio.c:93:6:sd_spi_set_prescaler	16	static
+../FATFS/Target/user_diskio.c:101:6:sd_deselect	8	static
+../FATFS/Target/user_diskio.c:107:5:sd_select	8	static
+../FATFS/Target/user_diskio.c:120:9:sd_spi_xchg	32	static
+../FATFS/Target/user_diskio.c:132:6:sd_spi_recv	32	static
+../FATFS/Target/user_diskio.c:141:9:sd_send_cmd	40	static
+../FATFS/Target/user_diskio.c:192:5:sd_recv_datablock	32	static
+../FATFS/Target/user_diskio.c:249:9:USER_initialize	40	static
+../FATFS/Target/user_diskio.c:324:9:USER_status	16	static
+../FATFS/Target/user_diskio.c:345:9:USER_read	32	static
+../FATFS/Target/user_diskio.c:389:9:USER_write	24	static
+../FATFS/Target/user_diskio.c:414:9:USER_ioctl	48	static

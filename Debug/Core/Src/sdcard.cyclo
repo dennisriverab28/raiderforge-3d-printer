@@ -1,0 +1,5 @@
+../Core/Src/sdcard.c:26:6:Initialize_SDCard	1
+../Core/Src/sdcard.c:31:7:IgnoreComments	3
+../Core/Src/sdcard.c:42:6:SDCard_SetState	1
+../Core/Src/sdcard.c:47:17:SDCard_GetState	1
+../Core/Src/sdcard.c:53:6:SDCard_Task	27

@@ -1,0 +1,11 @@
+../Core/Src/extruder_test.c:49:13:etest_reset	8	static
+../Core/Src/extruder_test.c:63:13:trim_and_lower	40	static
+../Core/Src/extruder_test.c:89:16:code_is	24	static
+../Core/Src/extruder_test.c:96:13:parse_args	168	static
+../Core/Src/extruder_test.c:145:20:dir_name	16	static
+../Core/Src/extruder_test.c:150:13:print_help	8	static
+../Core/Src/extruder_test.c:162:13:print_plan	128	static
+../Core/Src/extruder_test.c:207:13:process_move	216	static
+../Core/Src/extruder_test.c:270:13:process_set_position	112	static
+../Core/Src/extruder_test.c:291:6:ExtruderTest_ProcessLine	184	static
+../Core/Src/extruder_test.c:353:6:ExtruderTest_Task	160	static

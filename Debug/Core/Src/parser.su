@@ -1,0 +1,8 @@
+../Core/Src/parser.c:20:5:MatchSubString	40	static
+../Core/Src/parser.c:44:13:TrimLine	24	static
+../Core/Src/parser.c:61:6:Parse	24	static
+../Core/Src/parser.c:444:8:SepArgs	32	static
+../Core/Src/parser.c:459:6:ParseArgs	80	static
+../Core/Src/parser.c:528:6:parser_set_state	16	static
+../Core/Src/parser.c:533:23:parser_get_state	8	static
+../Core/Src/parser.c:537:6:Parser_task	152	static

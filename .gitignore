@@ -1,0 +1,23 @@
+﻿# Build artifacts
+build/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+build.log
+
+# IDE / editor
+.settings/
+.vscode/
+*.launch
+*.cfg
+
+# Claude Code workspace
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db

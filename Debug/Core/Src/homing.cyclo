@@ -1,0 +1,8 @@
+../Core/Src/homing.c:9:6:Homing_Init	3
+../Core/Src/homing.c:42:6:homing_change_state	3
+../Core/Src/homing.c:71:6:Homing_Update	52
+../Core/Src/homing.c:289:9:Homing_InProgress	2
+../Core/Src/homing.c:295:9:Homing_IsComplete	2
+../Core/Src/homing.c:301:9:Homing_HasFailed	2
+../Core/Src/homing.c:307:16:Homing_GetState	2
+../Core/Src/homing.c:317:6:Homing_Abort	3
