@@ -1,135 +1,121 @@
-# RaiderForge — Custom FDM 3D Printer Firmware
+<p align="center">
+  <img src="docs/banner.svg" alt="RaiderForge 3D Printer Firmware" width="100%">
+</p>
 
-**Course:** ECE 4380 — Embedded Systems Capstone, Texas Tech University  
-**Team:** Dennis Rivera · Quinton Cook · Matthew Garcia
+<p align="center">
+  <img src="https://img.shields.io/badge/STM32G0B1-03234B?logo=stmicroelectronics&logoColor=white" alt="STM32G0">
+  <img src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black" alt="C">
+  <img src="https://img.shields.io/badge/FreeRTOS-2BA94A" alt="FreeRTOS">
+  <img src="https://img.shields.io/badge/FATFS-555" alt="FATFS">
+  <img src="https://img.shields.io/badge/CoreXY-7C3AED" alt="CoreXY">
+  <img src="https://img.shields.io/badge/status-complete-22c55e" alt="Status">
+</p>
+
+<p align="center">
+  Custom firmware for a <b>fully scratch-built FDM 3D printer</b> — designed, assembled, and coded
+  from the ground up. Runs on an STM32G0B1RET6 (Cortex-M0+) with CoreXY kinematics and a<br>
+  direct-drive extruder: real-time motion, PID heat, G-code parsing, display and SD card. <b>No Marlin involved.</b>
+</p>
+
+<p align="center">
+  <i>ECE 4380 — Embedded Systems Capstone, Texas Tech University · Dennis Rivera · Quinton Cook · Matthew Garcia</i>
+</p>
 
 ---
 
-## Overview
+## ✨ What it does
 
-RaiderForge is a custom firmware for a fully custom-built FDM (Fused Deposition Modeling) 3D printer designed and assembled from scratch. The MCU is an STM32G0B1RET6 (ARM Cortex-M0+). The printer uses CoreXY kinematics and a direct-drive extruder. The firmware handles all real-time motion control, heating, G-code parsing, display output, and SD card reading — with no off-the-shelf firmware like Marlin involved.
+- 🧲 **CoreXY motion** — coordinated X/Y stepper motion with acceleration ramping; endstop-based
+  homing for X, Y, Z.
+- 🌡️ **PID heat control** — closed-loop hotend and heated-bed temperature regulation with
+  thermistor feedback.
+- 📄 **G-code engine** — parses G-code from the SD card and dispatches commands to motion, heat,
+  extruder, and fans.
+- 🧵 **Direct-drive extruder** — filament feed/retract with calibration routines.
+- 🌀 **Fan control** — PWM part-cooling and hotend fans.
+- 🖥️ **Display** — live telemetry (temperatures, position, print status) on an Ender-3-compatible screen.
+- 💾 **SD card** — FATFS-based reads of G-code files.
+- 🧩 **FreeRTOS** — multitasking architecture coordinating each subsystem concurrently, with an
+  interactive UART debug/test menu for bring-up.
 
----
+## 🏗 Architecture
 
-## Hardware
+```mermaid
+flowchart LR
+    SD[(SD card · FATFS)] --> PARSE[G-code parser]
+    PARSE --> DISP[Command dispatch]
+    DISP --> MOT[CoreXY motion → steppers]
+    DISP --> EXT[Extruder]
+    DISP --> HEAT[PID heater · hotend + bed]
+    DISP --> FAN[Fans]
+    TH[Thermistors · ADC] --> HEAT
+    subgraph RTOS [FreeRTOS]
+        DISP
+        MOT
+        HEAT
+    end
+    RTOS --> SCR[Ender-3 display]
+    UART[UART debug menu] -.-> RTOS
+```
+
+## 🔌 Hardware
 
 | Component | Detail |
-|-----------|--------|
+| --------- | ------ |
 | MCU | STM32G0B1RET6 (ARM Cortex-M0+) |
-| Frame | Custom 2020 Aluminum Extrusion |
+| Frame | Custom 2020 aluminum extrusion |
 | Kinematics | CoreXY |
-| Extruder | Direct Drive |
-| Bed Heating | AC-to-DC powered heated bed with thermistor |
-| Hotend | Standard FDM hotend with thermistor |
+| Extruder | Direct drive |
+| Bed | AC-to-DC heated bed + thermistor |
+| Hotend | Standard FDM hotend + thermistor |
 | Display | Ender 3 EXP3-compatible screen |
-| Storage | Micro SD card (FATFS middleware) |
+| Storage | microSD (FATFS middleware) |
 | RTOS | FreeRTOS |
 
----
+## 🗂 Project structure
 
-## Firmware Features
-
-- **CoreXY Motion Control** — coordinated X/Y stepper motion with acceleration ramping
-- **Homing Sequence** — endstop-based axis homing for X, Y, Z
-- **G-code Parser** — reads G-code from SD card and dispatches commands
-- **Heater Control** — PID-based hotend and bed temperature regulation with thermistor feedback
-- **Fan Control** — part cooling and hotend cooling fan PWM control
-- **Extruder Control** — direct drive filament feed/retract with calibration routines
-- **Display** — real-time telemetry (temperatures, position, print status) on Ender 3 screen
-- **SD Card** — FATFS-based SD card read for G-code files (one file at a time)
-- **FreeRTOS** — multitask RTOS architecture for concurrent subsystem management
-- **UART Debug Menu** — interactive serial debug interface for per-subsystem testing
-
----
-
-## Project Structure
-
-```
-RaiderForge_3D_Printer/
+```text
 ├── Core/
-│   ├── Inc/                       # Header files for all subsystems
-│   │   ├── bed_heater.h
-│   │   ├── display.h
-│   │   ├── extruder_test.h
-│   │   ├── fan.h
-│   │   ├── gcode_dispatch.h
-│   │   ├── heater.h
-│   │   ├── homing.h
-│   │   ├── motion.h
-│   │   ├── parser.h
-│   │   ├── sdcard.h
-│   │   ├── stepper.h
-│   │   ├── thermistor.h
-│   │   ├── uart_test_menu.h
-│   │   └── ...
-│   └── Src/                       # Source files
-│       ├── main.c                 # Entry point, task creation, system init
-│       ├── motion.c               # CoreXY motion, acceleration, step generation
-│       ├── stepper.c              # Low-level stepper driver interface
-│       ├── heater.c               # Hotend + bed PID heater control
-│       ├── bed_heater.c           # Bed-specific heater logic
-│       ├── thermistor.c           # Thermistor ADC-to-temperature conversion
-│       ├── bed_thermistor.c       # Bed thermistor variant
-│       ├── homing.c               # Endstop homing sequences
-│       ├── extruder_test.c        # Extruder movement and calibration
-│       ├── fan.c                  # Fan PWM control
-│       ├── display.c              # Ender 3 screen interface
-│       ├── sdcard.c               # SD card read via FATFS
-│       ├── parser.c               # G-code text parser
-│       ├── gcodefuncs.c           # G-code command executor
-│       ├── uart_debug.c           # UART logging utility
-│       ├── uart_test_menu.c       # Interactive UART debug/test menu
-│       └── app_freertos.c         # FreeRTOS task definitions
-├── Drivers/                       # STM32 HAL + CMSIS (auto-generated by CubeMX)
-├── Middlewares/                   # FreeRTOS + FATFS
-├── QBC_RaiderForge_04_21_26.ioc   # STM32CubeMX peripheral configuration
-├── Makefile
-├── STM32G0B1RETX_FLASH.ld         # Flash linker script
-├── STM32G0B1RETX_RAM.ld           # RAM linker script
-├── REFERENCES.md
-└── README.md
+│   ├── Inc/                 # subsystem headers (motion, heater, parser, sdcard, …)
+│   └── Src/
+│       ├── main.c           # init + task creation
+│       ├── motion.c         # CoreXY motion, acceleration, step generation
+│       ├── heater.c / bed_heater.c   # PID heat control
+│       ├── thermistor.c     # ADC → temperature
+│       ├── homing.c         # endstop homing
+│       ├── parser.c / gcodefuncs.c   # G-code parse + execute
+│       ├── sdcard.c         # FATFS SD reads
+│       ├── display.c        # Ender 3 screen
+│       └── app_freertos.c   # FreeRTOS task definitions
+├── Drivers/ · Middlewares/  # STM32 HAL + CMSIS, FreeRTOS + FATFS
+├── QBC_RaiderForge_04_21_26.ioc   # CubeMX peripheral config
+├── Makefile · STM32G0B1RETX_*.ld  # build + linker scripts
+├── docs/                    # state-architecture diagrams (draw.io)
+└── REFERENCES.md
 ```
 
----
+## 🚀 Build & flash
 
-## Build & Flash
+**STM32CubeIDE** — import the project and build for the STM32G0B1RET6 target, then flash over ST-Link.
 
-### Requirements
-- [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
-- ST-Link V2 debugger/programmer
-- STM32G0B1RET6 target board
+**Command line** (arm-none-eabi toolchain):
 
-### Steps
-1. Open STM32CubeIDE → `File > Open Projects from File System`
-2. Select the `RaiderForge_3D_Printer` folder
-3. Build: `Project > Build All` (`Ctrl+B`)
-4. Flash: connect ST-Link → `Run > Debug`
+```bash
+make                  # builds into Debug/
+# flash the resulting .elf / .bin via ST-Link (e.g. STM32CubeProgrammer)
+```
 
-### Loading a Print File
-1. Format a micro SD card as FAT32
-2. Copy a single `.gcode` file to the root of the card
-3. Insert the card before power-on — firmware reads it automatically
+The interactive UART debug menu lets you exercise each subsystem (motion, heat, extruder, display)
+individually during bring-up.
 
----
+## 🧰 Stack
 
-## Minimum Viable Product
-
-- [x] ARM Cortex-M0+ MCU controls all subsystems
-- [x] Stepper motor drivers connected and controlled
-- [x] Fan PWM control (part cooling + hotend)
-- [x] Heated bed with temperature feedback
-- [x] Ender 3-compatible display for telemetry
-- [x] Micro SD card G-code reading (one file at a time)
-- [x] AC-to-DC power supply compatible
-- [x] Custom aluminum extrusion frame
-- [x] CoreXY kinematics
-- [x] Direct drive extruder
-
----
-
-## References
-
-- [Ender 3 EXP3 Screen Pinout](https://maddie.info/hardware/2023/07/01/ender3-exp3-pinout.html)
-- STM32G0B1 Reference Manual (RM0444)
-- FreeRTOS Documentation — freertos.org
-- FATFS Documentation — elm-chan.org/fsw/ff
+| Layer | Tech |
+| ----- | ---- |
+| MCU | STM32G0B1RET6 (Cortex-M0+) |
+| Language | C (bare-metal + STM32 HAL) |
+| RTOS | FreeRTOS |
+| Storage | FATFS (microSD) |
+| Motion | CoreXY, stepper drivers, acceleration ramping |
+| Control | PID heat, thermistor ADC, PWM fans |
+| Tooling | STM32CubeMX / CubeIDE, Makefile, arm-none-eabi |
