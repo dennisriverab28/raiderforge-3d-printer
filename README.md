@@ -23,6 +23,16 @@
 
 ---
 
+## 👥 Team & ownership
+
+| Who | Owned |
+|---|---|
+| **Dennis Rivera** (firmware lead) | FreeRTOS task architecture, CoreXY kinematics & motion control, PID heater control + thermistor/ADC conditioning, MOSFET heater drive, motor driver board, buck/boost power management, system integration & testing |
+| **Quinton Cook** | G-code parser and SD-card (FATFS) mounting, mapped to the motion/heater APIs |
+| **Matthew Garcia** | Display subsystem (Ender-3 LCD / u8g2 integration) |
+
+---
+
 ## ✨ What it does
 
 - 🧲 **CoreXY motion** — coordinated X/Y stepper motion with acceleration ramping; endstop-based
